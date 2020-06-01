@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "IceScpRemote",
+	"super" : "IceGitRemote",
 	"category" : "Iceberg-Metacello-Gitlab-Nonstandard",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "MCGitlabNonstandardIceScpRemote",
+	"instvars" : [
+		"branch"
+	],
+	"name" : "IceGitlabNonstandardRemote",
 	"type" : "normal"
 }

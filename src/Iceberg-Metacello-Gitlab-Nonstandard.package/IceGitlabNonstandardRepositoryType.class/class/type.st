@@ -1,3 +1,3 @@
 accessing
-pe
+type
 	^ 'gitlabnonstd'

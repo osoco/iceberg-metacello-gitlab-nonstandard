@@ -1,3 +1,3 @@
 private - patches
 httpsUrl
-	^ 'gitlabnonstd://', projectPath, '.git'
+	^ 'https://gitlab.com/', projectPath, '.git'

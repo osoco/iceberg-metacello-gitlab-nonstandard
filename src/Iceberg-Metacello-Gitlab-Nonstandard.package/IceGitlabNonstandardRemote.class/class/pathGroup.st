@@ -1,0 +1,5 @@
+url handling
+pathGroup
+	"(gitlabnonstd\://)?([\w.]+)([\w\-/]+)?\:?([\w\-/]+)?\:([\w\-/]+)"
+
+	^ 6
