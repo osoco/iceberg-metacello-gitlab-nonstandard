@@ -1,3 +1,3 @@
 private - patches
 scpUrl
-	^ 'ssh://git@gitlab.com/', projectPath, '.git'
+	^ 'gitlabnonstd://' , self projectPath , ':' , self projectVersion , ':' , self repoPath
