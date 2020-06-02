@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "IceRepositoryCreator",
+	"super" : "IceLibgitLocalRepository",
 	"category" : "Iceberg-Metacello-Gitlab-Nonstandard",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "MCGitBasedNetworkRepositoryCreator",
+	"instvars" : [
+		"wrapped"
+	],
+	"name" : "IceGitlabNonstandardLocalRepository",
 	"type" : "normal"
 }

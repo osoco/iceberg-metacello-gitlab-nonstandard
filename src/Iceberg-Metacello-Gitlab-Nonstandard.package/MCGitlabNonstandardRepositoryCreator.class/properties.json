@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "IceRepositoryCreator",
+	"category" : "Iceberg-Metacello-Gitlab-Nonstandard",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MCGitlabNonstandardRepositoryCreator",
+	"type" : "normal"
+}

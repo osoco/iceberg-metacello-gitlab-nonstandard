@@ -9,7 +9,7 @@ getOrCreateIcebergRepository
 		detect: [ :repo | repo origin referencesSameRemoteLocationAs: remote ]
 		ifNone: [ | urlToUse |
 			urlToUse := remote url.
-			[ (MCGitBasedNetworkRepositoryCreator new
+			[ (MCGitlabNonstandardRepositoryCreator new
 				remote: remote;
 				url: urlToUse;
 				subdirectory: repoPath;

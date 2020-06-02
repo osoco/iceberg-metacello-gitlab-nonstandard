@@ -5,13 +5,15 @@ parseLocation: locationUrl version: versionString
 	version: nil
      "
 
-	| matcher projectPath owner projectName branch |
-	matcher := IceGitlabNonstandardRemote urlMatcher.
+	| matcher projectPath owner projectName branch urlHelper |
+	urlHelper := IceGitlabNonstandardRemote.
+	matcher := urlHelper urlMatcher.
 	(matcher matches: locationUrl)
-		ifTrue: [ owner := matcher subexpression: IceGitlabNonstandardRemote ownerGroup.
-			projectName := matcher subexpression: IceGitlabNonstandardRemote projectGroup.
-			projectPath := matcher subexpression: IceGitlabNonstandardRemote pathGroup.
-			branch := versionString ifNil: [ matcher subexpression: IceGitlabNonstandardRemote branchGroup ] ]
+		ifTrue: [ owner := urlHelper extractOwner: locationUrl usingMatcher: matcher.
+			projectName := urlHelper extractProjectName: locationUrl usingMatcher: matcher.
+			branch := versionString
+				ifNil: [ urlHelper extractBranch: locationUrl usingMatcher: matcher ].
+					projectPath := urlHelper extractPath: locationUrl usingMatcher: matcher ]
 		ifFalse: [ IceWrongUrl signal: 'Could not parse URL: ' , locationUrl ].
 	^ self new
 		projectPath: owner , projectName;
