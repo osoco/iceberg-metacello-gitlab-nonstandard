@@ -14,7 +14,7 @@ getOrCreateIcebergRepository
 				url: urlToUse;
 				subdirectory: repoPath;
 				branchName: self projectVersion;
-				createRepository) register ]
+				createRepository) ]
 				on: IceAuthenticationError
 				do: [ :e | 
 					self
