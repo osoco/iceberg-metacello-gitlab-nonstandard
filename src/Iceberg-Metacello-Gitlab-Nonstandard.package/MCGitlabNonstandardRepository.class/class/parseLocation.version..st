@@ -16,7 +16,7 @@ parseLocation: locationUrl version: versionString
 					projectPath := urlHelper extractPath: locationUrl usingMatcher: matcher ]
 		ifFalse: [ IceWrongUrl signal: 'Could not parse URL: ' , locationUrl ].
 	^ self new
-		projectPath: owner , projectName;
+		projectPath: projectName;
 		projectVersion: branch;
 		repoPath: projectPath;
 		yourself

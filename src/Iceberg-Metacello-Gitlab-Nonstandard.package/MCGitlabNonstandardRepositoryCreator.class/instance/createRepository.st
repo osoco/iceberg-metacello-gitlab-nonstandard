@@ -1,18 +1,9 @@
 actions
 createRepository
 	| backend locationToUse |
-	
 	self validate.
-
 	locationToUse := self locationToUse.
-	backend := self storageClass 
-		newRepositoryAt: locationToUse
-		subdirectory: self subdirectory.
-
+	backend := IceGitlabNonstandardLocalRepository wrap: (self storageClass newRepositoryAt: locationToUse subdirectory: self subdirectory).
 	(locationToUse exists not or: [ locationToUse hasChildren not ])
-		ifTrue: [ 
-			IceGitlabNonstandardLocalRepository wrap: (backend 
-				cloneRepositoryFrom: self remoteToUse 
-				branch: self branchName) ].
-
+		ifTrue: [ backend cloneRepositoryFrom: self remoteToUse branch: self branchName ].
 	^ IceRepository backend: backend
